@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Restaurant</string>
+    <string name="client_error">We haven\'t found what you are looking for. Please try again</string>
+    <string name="server_error">Our servers are trying to keep up. Please try again</string>
+    <string name="internet_connection_error">You are offline ):</string>
+</resources>

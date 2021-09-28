@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+def apikeyPropertiesFile = rootProject.file("apikey.properties")
+def apikeyProperties = new Properties()
+apikeyProperties.load(new FileInputStream(apikeyPropertiesFile))
+
+android {
+    compileSdk 31
+    defaultConfig {
+        applicationId "com.example.restaurant"
+        minSdk 23
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+    }
+    defaultConfig {
+        buildConfigField("String", "API_KEY", apikeyProperties['API_KEY'])
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "androidx.appcompat:appcompat:$appCompat"
+    implementation "androidx.core:core-ktx:$coreKtx"
+    implementation "com.google.android.material:material:$material"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayout"
+
+    implementation "com.google.code.gson:gson:$gson"
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+
+    implementation "com.squareup.okhttp3:okhttp:$okHttp"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttp"
+
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.3.2"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.3.2"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:5.3.2"
+    testImplementation "org.mockito.kotlin:mockito-kotlin:3.2.0"
+}

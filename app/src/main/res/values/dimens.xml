@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--ViewSizes-->
+    <dimen name="size_0dp">0dp</dimen>
+    <dimen name="size_1dp">1dp</dimen>
+    <dimen name="size_108dp">108dp</dimen>
+
+    <!--Margins-->
+    <dimen name="margin_8dp">8dp</dimen>
+    <dimen name="margin_16dp">16dp</dimen>
+    <dimen name="margin_20dp">20dp</dimen>
+    <dimen name="margin_24dp">24dp</dimen>
+    <dimen name="margin_32dp">32dp</dimen>
+    <dimen name="margin_56dp">56dp</dimen>
+    <dimen name="margin_64dp">64dp</dimen>
+
+    <!--Padding values-->
+    <dimen name="padding_8dp">8dp</dimen>
+    <dimen name="padding_22dp">22dp</dimen>
+
+    <!--Font Sizes-->
+    <dimen name="font_22sp">22sp</dimen>
+    <dimen name="font_26sp">26sp</dimen>
+    <dimen name="font_30sp">30sp</dimen>
+    <dimen name="font_48sp">48sp</dimen>
+</resources>
